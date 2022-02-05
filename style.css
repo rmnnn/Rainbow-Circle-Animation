@@ -1,0 +1,100 @@
+body {
+  background-color: #050210;
+}
+.flex-div {
+  margin-top: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#center-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 2;
+  width: 440px;
+  height: 440px;
+  position: absolute;
+  background-color: #050210;
+  border-radius: 100%;
+}
+#main-circle {
+  position: relative;
+  margin: 0 auto;
+  width: 500px;
+  height: 500px;
+  background: rgb(251, 93, 173);
+  background: linear-gradient(
+    90deg,
+    rgba(251, 93, 173, 1) 0%,
+    rgba(85, 251, 159, 1) 0%,
+    rgba(185, 122, 255, 1) 100%
+  );
+  border-radius: 100%;
+  animation: spin 0.6s ease 0s infinite forwards running;
+}
+#main-circle::after {
+  position: absolute;
+
+  background: rgb(251, 93, 173);
+  background: linear-gradient(
+    90deg,
+    rgba(251, 93, 173, 1) 0%,
+    rgba(85, 251, 159, 1) 0%,
+    rgba(185, 122, 255, 1) 100%
+  );
+  filter: blur(25px);
+  border-radius: 100%;
+  content: "";
+  width: 510px;
+  height: 510px;
+}
+
+#fill-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 440px;
+  height: 440px;
+  background-color: #0c0527;
+  border-radius: 100%;
+  animation: fillCircle 1s ease 0s infinite none running;
+}
+#sfill-circle {
+  width: 100px;
+  height: 100px;
+  background-color: #170e38;
+  border-radius: 100%;
+  animation: sFillCircle 1s ease 0s infinite none running;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fillCircle {
+  from {
+    width: 330px;
+    height: 330px;
+  }
+  to {
+    transition: width 0.5s, height 0.5s;
+    transform-origin: 0;
+    height: 440px;
+    width: 440px;
+  }
+}
+@keyframes sFillCircle {
+  form {
+    width: 10px;
+    height: 10px;
+  }
+  to {
+    transition: width 0.5s, height 0.5s;
+    transform-origin: 0;
+    height: 360px;
+    width: 360px;
+  }
+}
